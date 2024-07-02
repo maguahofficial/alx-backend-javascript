@@ -1,3 +1,4 @@
+//8. Clean set
 const cleanSet = (set, startString) => {
   if (startString === undefined || startString.length === 0) {
     return '';
@@ -7,5 +8,5 @@ const cleanSet = (set, startString) => {
     .map((parametro) => (parametro !== undefined ? parametro.slice(startString.length) : ''))
     .join('-');
 };
-//8. Clean set
+
 export default cleanSet;
