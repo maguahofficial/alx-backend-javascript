@@ -1,7 +1,7 @@
-const pathco = require("path");
+const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const ForkTsCheckerWebpackPluginco = require('fork-ts-checker-webpack-plugin');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 module.exports = {
   entry: "./js/main.ts",
@@ -24,7 +24,7 @@ module.exports = {
     contentBase: "./dist"
   },
   plugins: [
-    new ForkTsCheckerWebpackPluginco(),
+    new ForkTsCheckerWebpackPlugin(),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: "Development"
@@ -32,6 +32,6 @@ module.exports = {
   ],
   output: {
     filename: "bundle.js",
-    pathco: pathco.resolve(__dirname, "dist")
+    path: path.resolve(__dirname, "dist")
   }
 };
