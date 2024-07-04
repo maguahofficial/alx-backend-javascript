@@ -1,7 +1,7 @@
 const path = require("path");
-const HtmlWebpackPluginvr = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const ForkTsCheckerWebpackPluginvr = require('fork-ts-checker-webpack-plugin');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 module.exports = {
   entry: "./js/main.ts",
@@ -24,9 +24,9 @@ module.exports = {
     contentBase: "./dist"
   },
   plugins: [
-    new ForkTsCheckerWebpackPluginvr(),
+    new ForkTsCheckerWebpackPlugin(),
     new CleanWebpackPlugin(),
-    new HtmlWebpackPluginvr({
+    new HtmlWebpackPlugin({
       title: "Development"
     })
   ],
