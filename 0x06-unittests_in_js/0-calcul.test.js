@@ -1,10 +1,10 @@
-// Import the 'assert' module for writing test assertions
+//This Import the 'assert' module for writing test assertions
 const assert = require("assert");
 const { it, describe } = require("mocha");
 const calculateNumber = require("./0-calcul");
 
 describe("calculateNumber()", function() {
-// (Test case) Check if the function rounds 1 and 2 and returns the sum
+//This Check if the function rounds 1 and 2 and returns the sum
     it(`checking if numbers round`, function() {
       const res = calculateNumber(1, 2);
       assert.strictEqual(res, 3);

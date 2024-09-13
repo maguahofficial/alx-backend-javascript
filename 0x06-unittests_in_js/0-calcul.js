@@ -1,4 +1,4 @@
-// Define a function named 'calculateNumber'
+// This Define a function named 'calculateNumber'
 // that takes two arguments 'a' and 'b'
 function calculateNumber(a, b) {
     const anx = Math.round(a);
