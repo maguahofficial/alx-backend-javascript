@@ -1,8 +1,7 @@
-// This Define a function named 'calculateNumber'
-// that takes two arguments 'a' and 'b'
 function calculateNumber(a, b) {
-    const anx = Math.round(a);
-    const bnx = Math.round(b);
-    const cx = anx + bnx;
-    return cx;
+    const ax = Math.round(a);
+    const bx = Math.round(b);
+    const c = ax + bx;
+    return c;
 }
+module.exports = calculateNumber;
