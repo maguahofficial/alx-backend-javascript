@@ -1,22 +1,23 @@
 function calculateNumber(type, a, b) {
-    const anc = Math.round(a);
-    const bnc = Math.round(b);
+    const ax = Math.round(a);
+    const bx = Math.round(b);
     let c = 0;
     switch (type) {
     case 'SUM':
-	c = anc + bnc;
+	c = ax + bx;
 	break;
     case 'SUBTRACT':
-	c = anc - bnc;
+	c = ax - bx;
 	break;
     case 'DIVIDE':
-      if (bnc === 0) {
+      if (bx === 0) {
             c = "Error";
       } else {
-            c = anc / bnc;
+            c = ax / bx;
       }
       break;
     }
     return c;
 }
 
+module.exports = calculateNumber;
