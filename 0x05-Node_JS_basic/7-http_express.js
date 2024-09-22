@@ -1,24 +1,29 @@
-// Import the 'express' module to create an Express.js application
 const express = require('express');
 
-// Create an instance of an Express application
+const args = process.argv.slice(2);
+const countStudents = require('./3-read_file_async');
+
+const DATABASE = args[0];
+
 const app = express();
+const port = 1245;
 
-// Define the port number where the server will listen
-const port = 1245; // Port 1245
-
-// Define a route for the root URL ('/') that handles GET requests
-app.get('/', (request, response) => {
-  // Send a plain text response with the message 'Hello Holberton School!'
-  response.send('Hello Holberton School!');
+app.get('/', (req, res) => {
+  res.send('Hello Holberton School!');
 });
 
-// Make the Express application listen on the specified port
+app.get('/students', async (req, res) => {
+  const msg = 'This is the list of our students\n';
+  try {
+    const students = await countStudents(DATABASE);
+    res.send(`${msg}${students.join('\n')}`);
+  } catch (error) {
+    res.send(`${msg}${error.message}`);
+  }
+});
+
 app.listen(port, () => {
-  // This callback function is called when the server starts listening
-  // It is currently empty but can be used for logging or initialization tasks
+  console.log();
 });
 
-// Export the Express application so it can be used in other files or for testing
 module.exports = app;
-
